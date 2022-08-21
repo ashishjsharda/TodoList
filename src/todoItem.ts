@@ -7,4 +7,8 @@ export class TodoItem {
     this.task=task;
     this.complete=complete;
   }
+
+  public printDetails():void{   //method
+    console.log(`${this.id} ${this.task} ${this.complete}`);
+  }
 }
