@@ -10,6 +10,11 @@ export class TodoCollection {
         }
         this.todoList.push(new TodoItem(this.nextId,task));
         return this.nextId++;
+
+    }
+
+    getTodoById(id:number):TodoItem{
+        return this.todoList.find(todo=>todo.id===id);
     }
 
 }
