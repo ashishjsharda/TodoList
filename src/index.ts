@@ -7,3 +7,6 @@ let todoList: TodoItem[] = [
     new TodoItem(4, "Call Joe", true)
 ];
 let collection = new TodoCollection("Max", todoList);
+collection.addTodo("Go to the gym");
+console.log(JSON.stringify(collection, null, 2));
+collection.markComplete(1, true);
