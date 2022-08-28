@@ -1,6 +1,7 @@
 import {TodoItem} from './todoItem';
 export class TodoCollection {
     private nextId:number=1;
+    itemMap: any;
     constructor(public userName:string,public todoList:TodoItem[]=[]){
 
     }
@@ -29,11 +30,9 @@ export class TodoCollection {
         return this.todoList.filter(todo=>todo.task.indexOf(search)>-1);    
     }
     getTodoItems(includeComplete:boolean):TodoItem[]{
-        if(includeComplete){
-            return this.todoList;
-        }else{
-            return this.todoList.filter(todo=>!todo.complete);
-        }
+        
+
+        return [...this.itemMap.values()].filter(item=>includeComplete||!item.complete);    
     }
 
 
