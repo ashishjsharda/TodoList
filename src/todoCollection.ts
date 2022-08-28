@@ -28,6 +28,14 @@ export class TodoCollection {
     getTodoSearch(search:string):TodoItem[]{
         return this.todoList.filter(todo=>todo.task.indexOf(search)>-1);    
     }
+    getTodoItems(includeComplete:boolean):TodoItem[]{
+        if(includeComplete){
+            return this.todoList;
+        }else{
+            return this.todoList.filter(todo=>!todo.complete);
+        }
+    }
+
 
 
     markComplete(id:number,complete:boolean):void{
