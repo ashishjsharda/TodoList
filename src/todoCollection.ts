@@ -22,6 +22,9 @@ export class TodoCollection {
     getTodoByInComplete():TodoItem[]{
         return this.todoList.filter(todo=>!todo.complete);
     }
+    deleteTodo(id:number):void{
+        this.todoList=this.todoList.filter(todo=>todo.id!==id);
+    }
 
 
     markComplete(id:number,complete:boolean):void{
