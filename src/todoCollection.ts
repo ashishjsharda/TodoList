@@ -17,11 +17,12 @@ export class TodoCollection {
         return this.todoList.find(todo=>todo.id===id);
     }
     getTodoByComplete():TodoItem[]{
-        return this.todoList.filter(todo=>todo.isComplete);
+        return this.todoList.filter(todo=>todo.complete);
     }
     getTodoByInComplete():TodoItem[]{
-        return this.todoList.filter(todo=>!todo.isComplete);
+        return this.todoList.filter(todo=>!todo.complete);
     }
+
 
     markComplete(id:number,complete:boolean):void{
         const todoItem:TodoItem=this.getTodoById(id);
