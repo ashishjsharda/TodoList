@@ -25,6 +25,9 @@ export class TodoCollection {
     deleteTodo(id:number):void{
         this.todoList=this.todoList.filter(todo=>todo.id!==id);
     }
+    getTodoSearch(search:string):TodoItem[]{
+        return this.todoList.filter(todo=>todo.task.indexOf(search)>-1);    
+    }
 
 
     markComplete(id:number,complete:boolean):void{
