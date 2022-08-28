@@ -16,6 +16,12 @@ export class TodoCollection {
     getTodoById(id:number):TodoItem{
         return this.todoList.find(todo=>todo.id===id);
     }
+    getTodoByComplete():TodoItem[]{
+        return this.todoList.filter(todo=>todo.isComplete);
+    }
+    getTodoByInComplete():TodoItem[]{
+        return this.todoList.filter(todo=>!todo.isComplete);
+    }
 
     markComplete(id:number,complete:boolean):void{
         const todoItem:TodoItem=this.getTodoById(id);
